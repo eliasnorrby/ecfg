@@ -14,3 +14,12 @@ jobs:
         provider: script
         skip_cleanup: true
         script: npx semantic-release
+
+notifications:
+  slack:
+    rooms:
+      secure: dpRvUmk2HuWWXLtX9fovRU+io8lmCe349xU1QeSFHULflAQ/D9ja9bmU17cHkkY+6WYtNkpRXdczws3ftbFitPIlgD4R19GMiFrTzCgIFQ8sONBDRGs9raqx7N+Cn3L2Qc5MFY7XSKhQVP3X002Lp1wlrB8+dH4S06EGOcQfj32z3+bat5az7gKvc7Tfty7Gijr43LcZoGxL/AXs5wNngDvwyOnG08czHJmvJ7X8F9HmNE55jKhfQenjoq6ot/XNBWu/ag0Oin2m7nsooZMBOkKqQ9V3UymluRSY/WM1S9oikUNlgW5u02iCTCR1zLG2sDtPHL0B8y4A/eBSGGH8gy6dQcWL43pkntl27QuP/3ZT70JxU6pXE7MnYHWYy22593uufUQ9KnOE5t4LYnBeSzPeip8512+xx84zMuBE6pxKB9XEaHmeBcwRlEvhJlPJo0vnns/PNLzQyfqksm7qBWrOJXIDNFASvdy9AC0l+am2FwLrZizAKLjdwOLdKHBezkA8EKJEhoChRw2jilj/O+rmK8diaxU/mOwypA+FhZdFy0YgD3INjomKl0XZMdf90mxwkrra9m6HK6eHqvGet2zjfoGcB39HgzDwFqMlYRLVWHKeAvxYVXe9qErx+sPbm+8OLI/0dFvREYs6+c62Cvj8HCR77c+An9L2Z8O8aTI=
+    template:
+      - 'Build <%{build_url}|%{result}> for %{repository_slug}@%{branch} (<%{compare_url}|%{commit}>) in %{duration}'
+    on_success: never
+    on_failure: always

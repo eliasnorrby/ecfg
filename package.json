@@ -4,6 +4,7 @@
   "description": "CLI for JavaScript project configuration",
   "main": "./lib/index.js",
   "scripts": {
+    "build": "tsc -p .",
     "test": "jest"
   },
   "repository": {

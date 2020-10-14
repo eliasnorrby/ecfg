@@ -1,7 +1,7 @@
 {
   "name": "ecfg",
   "version": "1.0.0",
-  "description": "CLI fro JavaScript project configuration",
+  "description": "CLI for JavaScript project configuration",
   "main": "./lib/index.js",
   "scripts": {
     "test": "jest"

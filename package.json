@@ -46,10 +46,5 @@
     "lint-staged": "^10.4.0",
     "prettier": "^2.1.2",
     "ts-jest": "^26.4.1"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   }
 }

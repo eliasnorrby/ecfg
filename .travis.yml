@@ -1,0 +1,19 @@
+language: 'node_js'
+
+jobs:
+  include:
+    - stage: test
+      node_js: lts/*
+# Uncomment to modify test script (default: npm test)
+#       script:
+#         - npm run lint
+#         - "./setup.test.sh"
+# Uncomment to publish to npm
+#     - stage: release
+#       if: branch = master
+#       node_js: lts/*
+#       script: skip
+#       deploy:
+#         provider: script
+#         skip_cleanup: true
+#         script: npx semantic-release

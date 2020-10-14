@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { log } from '@eliasnorrby/log-util'
 
 export function run(): void {

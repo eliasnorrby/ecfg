@@ -1,0 +1,28 @@
+{
+  "name": "ecfg",
+  "version": "1.0.0",
+  "description": "CLI fro JavaScript project configuration",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eliasnorrby/ecfg.git"
+  },
+  "keywords": [
+    "config",
+    "prettier",
+    "eslint",
+    "git",
+    "dependabot",
+    "semantic-release",
+    "commitlint"
+  ],
+  "author": "eliasnorrby",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eliasnorrby/ecfg/issues"
+  },
+  "homepage": "https://github.com/eliasnorrby/ecfg#readme"
+}

@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/eliasnorrby/ecfg/compare/v1.0.0...v1.1.0) (2020-10-14)
+
+
+### Features
+
+* add learn more message ([f8acd50](https://github.com/eliasnorrby/ecfg/commit/f8acd50e20a632db9bd7e83766e40ea0bc84997f))
+
 # 1.0.0 (2020-10-14)
 
 

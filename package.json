@@ -1,6 +1,6 @@
 {
   "name": "ecfg",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "CLI for JavaScript project configuration",
   "main": "./lib/index.js",
   "bin": {

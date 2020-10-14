@@ -3,6 +3,9 @@
   "version": "0.0.0-development",
   "description": "CLI for JavaScript project configuration",
   "main": "./lib/index.js",
+  "bin": {
+    "ecfg": "./lib/index.js"
+  },
   "files": [
     "lib/**/*"
   ],

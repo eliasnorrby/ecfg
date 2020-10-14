@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/eliasnorrby/ecfg/compare/v1.1.0...v1.2.0) (2020-10-14)
+
+
+### Features
+
+* add shebang to index.ts ([bb27933](https://github.com/eliasnorrby/ecfg/commit/bb27933f8542a59435fbc06ec8160e169ef27df1))
+
 # [1.1.0](https://github.com/eliasnorrby/ecfg/compare/v1.0.0...v1.1.0) (2020-10-14)
 
 

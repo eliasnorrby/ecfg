@@ -37,6 +37,7 @@
     "@commitlint/cli": "^11.0.0",
     "@eliasnorrby/commitlint-config": "^2.3.28",
     "@eliasnorrby/prettier-config": "^4.2.12",
+    "@eliasnorrby/semantic-release-config": "^3.0.16",
     "@types/jest": "^26.0.14",
     "@typescript-eslint/eslint-plugin": "^4.4.1",
     "@typescript-eslint/parser": "^4.4.1",
@@ -45,6 +46,10 @@
     "jest": "^26.5.3",
     "lint-staged": "^10.4.0",
     "prettier": "^2.1.2",
+    "semantic-release": "^17.2.1",
     "ts-jest": "^26.4.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

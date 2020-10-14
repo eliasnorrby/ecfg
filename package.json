@@ -1,6 +1,6 @@
 {
   "name": "ecfg",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "CLI for JavaScript project configuration",
   "main": "./lib/index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "test": "jest",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",

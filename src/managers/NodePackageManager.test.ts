@@ -2,11 +2,18 @@ import { NodePackageManager } from './NodePackageManager'
 import { Execa } from '../services/Execa'
 
 let npm: NodePackageManager
+
 const execa = new Execa()
 execa.run = jest.fn()
 
+let hasYarn = false
+jest.mock('has-yarn', () => {
+  return jest.fn(() => hasYarn)
+})
+
 beforeEach(() => {
   jest.clearAllMocks()
+  hasYarn = false
   npm = new NodePackageManager(execa)
 })
 
@@ -42,6 +49,20 @@ test('it installs multiple packages', () => {
   expect(execa.run).toHaveBeenCalledTimes(2)
   expect(execa.run).toHaveBeenNthCalledWith(1, 'npm install jest')
   expect(execa.run).toHaveBeenNthCalledWith(2, 'npm install -D prettier husky')
+})
+
+it('uses yarn when appropriate', () => {
+  hasYarn = true
+
+  npm = new NodePackageManager(execa)
+  register('jest')
+
+  expect(npm.describe()).toMatch(/yarn add/)
+
+  npm.execute()
+
+  expect(execa.run).toHaveBeenCalledTimes(1)
+  expect(execa.run).toHaveBeenCalledWith('yarn add jest')
 })
 
 function register(dependency: string, isDev = false): void {

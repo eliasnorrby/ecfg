@@ -1,0 +1,18 @@
+---
+nodePackages:
+  - name: prettier
+    isDev: true
+  - name: '@eliasnorrby/prettier-config'
+    isDev: true
+    skipOnNoInstall: true
+nodeScripts:
+  - name: format
+    script: prettier --write .
+  - name: format:check
+    script: prettier --check .
+files:
+  - name: .prettierignore
+    source: prettierignore
+  - name: prettier.config.js
+    source: prettier.config.js
+    noInstallFallback: prettier.default.config.js

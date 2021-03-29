@@ -10,5 +10,5 @@
   "rules": {
     "@typescript-eslint/no-unused-vars": 2
   },
-  "ignorePatterns": ["src/modules/**/files/**"]
+  "ignorePatterns": ["src/modules/**/files/**", "**/__mocks__/**"]
 }

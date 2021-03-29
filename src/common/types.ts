@@ -70,6 +70,11 @@ export interface Module {
   resources(): ModuleResourceList[]
 }
 
+export interface Executor {
+  withLabel(lable: string): Executor
+  run(command: string): Promise<void>
+}
+
 // ==
 
 export interface Options {

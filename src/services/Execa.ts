@@ -17,6 +17,7 @@ export class Execa implements Executor {
     const spinner = this.spinner(this.label)
     try {
       spinner.start()
+      // TODO: remove me
       log.fail('About to actually call execa!')
       process.exit(1)
       await execa.command(command)

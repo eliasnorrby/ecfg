@@ -63,6 +63,7 @@ export type CommandConfig = Command
 
 export interface Manager {
   register(resources: ModuleResourceList): void
+  describe(): string
   execute(): void
 }
 

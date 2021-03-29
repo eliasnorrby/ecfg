@@ -9,5 +9,6 @@
   ],
   "rules": {
     "@typescript-eslint/no-unused-vars": 2
-  }
+  },
+  "ignorePatterns": ["src/modules/**/files/**"]
 }

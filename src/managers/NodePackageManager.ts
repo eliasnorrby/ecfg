@@ -43,7 +43,7 @@ export class NodePackageManager implements Manager {
   }
 
   describe(): string {
-    return `Will install ${this.dependencies.length} (${this.devDependencies.length}) dependencies.`
+    return `Will install ${this.dependencies.length} (${this.devDependencies.length}) dependencies using ${this.installCommand}.`
   }
 
   private names(dependencies: NodePackage[]) {

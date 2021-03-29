@@ -16,7 +16,8 @@
     "format": "prettier --write .",
     "lint": "eslint src",
     "semantic-release": "semantic-release",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "program": "node ./lib/index.js"
   },
   "repository": {
     "type": "git",

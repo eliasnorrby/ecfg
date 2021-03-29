@@ -10,7 +10,7 @@
     "lib/**/*"
   ],
   "scripts": {
-    "build": "tsc -p .",
+    "build": "tsc --project tsconfig.production.json",
     "test": "jest",
     "format:check": "prettier --check .",
     "format": "prettier --write .",

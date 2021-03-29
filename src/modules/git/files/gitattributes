@@ -1,0 +1,7 @@
+# Use LF in repo
+* text=auto
+
+# Remove lockfiles from diff
+package-lock.json -diff
+yarn.lock -diff
+

@@ -1,0 +1,6 @@
+---
+files:
+  - name: .gitignore
+    source: gitignore
+  - name: .gitattributes
+    source: gitattributes

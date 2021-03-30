@@ -81,7 +81,16 @@ test('handles noInstall option for packages', () => {
   )
 })
 
-test.todo('it transforms file paths')
+test('it transforms file paths', () => {
+  const list = loader.loadAll(['prettier'])
+  expect(list[0].files?.find(() => true)?.source).toMatch(
+    /modules\/prettier\/files/
+  )
+})
+
+test('it does not break on empty config', () => {
+  expect(() => loader.loadAll(['empty'])).not.toThrow()
+})
 
 function partialFileObjectFromModule(
   module: string,

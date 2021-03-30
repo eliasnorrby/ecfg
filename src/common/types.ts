@@ -72,7 +72,7 @@ export interface Module {
 }
 
 export interface Executor {
-  withLabel(lable: string): Executor
+  withLabel(label: string): Executor
   run(command: string): Promise<void>
 }
 

@@ -1,5 +1,5 @@
 import { log } from '@eliasnorrby/log-util'
-import { Context } from '@common/Context'
+import { Context } from '../common/Context'
 import { YamlReader } from './YamlReader'
 
 import fs from 'fs'

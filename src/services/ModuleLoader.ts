@@ -1,4 +1,4 @@
-import { Context } from '@common/Context'
+import { Context } from '../common/Context'
 import {
   ConfigReader,
   File,

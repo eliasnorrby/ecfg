@@ -12,7 +12,7 @@
   "scripts": {
     "prebuild": "del lib/",
     "build": "tsc --project tsconfig.production.json",
-    "postbuild": "cpy '**/*' '!**/*.ts' ../lib/ --cwd=src/ --no-overwrite --parents",
+    "postbuild": "cpy '**/*' '!**/*.ts' '!**/__mocks__/**/*' ../lib/ --cwd=src/ --no-overwrite --parents",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "format:check": "prettier --check .",

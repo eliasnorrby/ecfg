@@ -3,7 +3,7 @@ import execa from 'execa'
 import { log } from '@eliasnorrby/log-util'
 import { Executor } from '@common/types'
 
-const DEFAULT_LABEL = 'Processing...'
+export const DEFAULT_LABEL = 'Processing...'
 
 export class Execa implements Executor {
   private label: string = DEFAULT_LABEL
@@ -17,9 +17,6 @@ export class Execa implements Executor {
     const spinner = this.spinner(this.label)
     try {
       spinner.start()
-      // TODO: remove me
-      log.fail('About to actually call execa!')
-      process.exit(1)
       await execa.command(command)
       spinner.stop()
       this.label = DEFAULT_LABEL

@@ -83,9 +83,7 @@ export class ModuleLoader {
   }
 
   private addContextPath(file: FileConfig): FileConfig {
-    if (!this.context) {
-      throw new Error('Context is null, cannot add path.')
-    }
+    if (!this.context) throw new Error('Context is null, cannot add path.')
     return {
       ...file,
       source: `${this.context.filesPath}/${file.source}`,

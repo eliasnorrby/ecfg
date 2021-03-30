@@ -32,6 +32,7 @@ export const CONFIGS: { [Id: string]: ModuleResourceConfigList } = {
       },
     ],
   },
+  empty: {},
 }
 
 export class YamlReader implements ConfigReader {

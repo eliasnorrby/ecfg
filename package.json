@@ -12,6 +12,7 @@
   "scripts": {
     "build": "tsc --project tsconfig.production.json",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
     "lint": "eslint src",

@@ -9,7 +9,7 @@ import {
   ModuleResourceConfigList,
 } from '@common/types'
 
-const BASE_PATH = path.join('./', 'src', 'modules')
+const BASE_PATH = path.join(__dirname, '..', 'modules')
 const CONFIG_FILE_NAME = 'config.yml'
 
 export class YamlReader implements ConfigReader {

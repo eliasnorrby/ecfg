@@ -82,3 +82,13 @@ export interface Options {
   noInstall: boolean
   force: boolean
 }
+
+export interface ConfigReader {
+  read(context: ModuleContext): ModuleResourceConfigList
+}
+
+export interface ModuleContext {
+  name: string
+  filesPath: string
+  configPath: string
+}

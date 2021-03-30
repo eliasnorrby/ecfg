@@ -1,18 +1,26 @@
+import { Context } from '@common/Context'
 import {
+  ConfigReader,
   File,
   FileConfig,
+  ModuleContext,
   ModuleResourceConfigList,
   ModuleResourceList,
   NodePackage,
   NodePackageConfig,
   Options,
 } from '@common/types'
+import { YamlReader } from './YamlReader'
 
 export class ModuleLoader {
   private options: Options
+  private reader: ConfigReader
+  private context: ModuleContext | null
 
-  constructor(options: Options) {
+  constructor(options: Options, reader?: ConfigReader) {
     this.options = options
+    this.reader = reader || new YamlReader()
+    this.context = null
   }
 
   loadAllAndMerge(modules: string[]): ModuleResourceList {
@@ -34,8 +42,15 @@ export class ModuleLoader {
   }
 
   private load(module: string): ModuleResourceList {
-    const resources: ModuleResourceConfigList = read(module)
-    return this.transform(resources)
+    this.context = new Context(module)
+    const resources = this.reader.read(this.context)
+    const transformedResources = this.transform(resources)
+    this.resetContext()
+    return transformedResources
+  }
+
+  private resetContext() {
+    this.context = null
   }
 
   private transform(resources: ModuleResourceConfigList): ModuleResourceList {
@@ -58,32 +73,22 @@ export class ModuleLoader {
   }
 
   private transformFiles(files: FileConfig[] = []): File[] {
-    if (this.options.noInstall) {
-      return files
-        .map((f) =>
-          f.noInstallFallback ? { ...f, source: f.noInstallFallback } : f
-        )
-        .map((f) => {
-          delete f.noInstallFallback
-          return f
-        })
-    }
     return files
+      .map((f) =>
+        this.options.noInstall && f.noInstallFallback
+          ? { ...f, source: f.noInstallFallback }
+          : f
+      )
+      .map((f) => this.addContextPath(f))
   }
-}
 
-function read(module: string): ModuleResourceConfigList {
-  console.log(`read ${module}`)
-  if (module === 'prettier') {
-    return {
-      nodePackages: [
-        {
-          name: '@eliasnorrby/prettier-config',
-          isDev: true,
-        },
-      ],
+  private addContextPath(file: FileConfig): FileConfig {
+    if (!this.context) {
+      throw new Error('Context is null, cannot add path.')
     }
-  } else {
-    return {}
+    return {
+      ...file,
+      source: `${this.context.filesPath}/${file.source}`,
+    }
   }
 }

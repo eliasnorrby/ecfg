@@ -1,0 +1,15 @@
+version = 1
+
+test_patterns = ["src/**/*.test.ts"]
+
+exclude_patterns = [
+    "/node_modules/**",
+    "/lib/**",
+    "**/__mocks__/**/*",
+    "/src/modules/**/files/*.js"
+]
+
+[[analyzers]]
+name = "javascript"
+enabled = true
+

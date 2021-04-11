@@ -65,6 +65,19 @@ it('uses yarn when appropriate', () => {
   expect(execa.run).toHaveBeenCalledWith('yarn add jest')
 })
 
+it('does nothing if no packages are registered', () => {
+  npm.register({
+    nodeScripts: [
+      {
+        name: 'format',
+        script: 'prettier --write .',
+      },
+    ],
+  })
+
+  expect(execa.run).not.toHaveBeenCalled()
+})
+
 function register(dependency: string, isDev = false): void {
   npm.register({
     nodePackages: [

@@ -45,10 +45,8 @@ export type NodeFieldConfig = NodeField
 
 export interface File {
   name: string
-  content?: string
   source?: string
   append?: boolean
-  noInstallFallback?: string
 }
 
 export interface FileConfig extends File {
@@ -74,6 +72,19 @@ export interface Module {
 export interface Executor {
   withLabel(label: string): Executor
   run(command: string): Promise<void>
+}
+
+export interface PackageJsonScript {
+  [key: string]: string
+}
+
+export interface PackageJson {
+  scripts?: PackageJsonScript
+}
+
+export interface PackageJsonIO {
+  read(): PackageJson
+  write(content: PackageJson): void
 }
 
 // ==

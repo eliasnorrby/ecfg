@@ -33,7 +33,7 @@ export class NodeScriptManager implements Manager {
 
     const scripts: PackageJsonScript = {}
 
-    this.scripts.forEach((script) => (scripts[script.name] = script.script))
+    this.scripts.forEach(({ name, script }) => (scripts[name] = script))
 
     this.pkgIo.write({
       ...pkgJson,
